@@ -1,5 +1,6 @@
 import Container from "@/components/container";
-function StartupsPage() {
+
+async function StartupsPage() {
   return (
     <div>
       <Container>Startups Page</Container>
