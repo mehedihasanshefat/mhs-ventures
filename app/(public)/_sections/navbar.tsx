@@ -3,7 +3,7 @@ import { navItems } from "@/constants";
 import Image from "next/image";
 import logo from "../../../public/images/mhs-ventures-logo.svg";
 import { MenuIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import Container from "@/components/container";
 import { getSessionClient } from "@/lib/getSessionClient";
@@ -42,15 +42,23 @@ export default function Navbar() {
               />
             ) : (
               <>
-                <Button
-                  variant="outline"
-                  className="hidden rounded-full px-6 md:inline-flex"
+                <Link
+                  href="/login"
+                  className={buttonVariants({
+                    variant: "outline",
+                    className: "hidden rounded-full px-6 md:inline-flex",
+                  })}
                 >
                   Log In
-                </Button>
-                <Button className="hidden rounded-full px-6 md:inline-flex">
+                </Link>
+                <Link
+                  href="/register"
+                  className={buttonVariants({
+                    className: "hidden rounded-full px-6 md:inline-flex",
+                  })}
+                >
                   Sign Up
-                </Button>
+                </Link>
               </>
             )}
             <MenuIcon className="md:hidden" />
