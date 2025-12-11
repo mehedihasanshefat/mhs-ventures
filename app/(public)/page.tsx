@@ -1,3 +1,4 @@
+"use client";
 import Hero from "./_sections/hero";
 import LogoTicker from "./_sections/logo-ticker";
 import Introduction from "./_sections/introduction";
@@ -6,7 +7,7 @@ import Integrations from "./_sections/integrations";
 import Faqs from "./_sections/faqs";
 import CallToAction from "./_sections/call-to-action";
 import Container from "@/components/container";
-async function HomePage() {
+function HomePage() {
   return (
     <>
       <Hero />
