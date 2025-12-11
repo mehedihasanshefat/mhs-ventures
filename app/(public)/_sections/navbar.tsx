@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <header className="py-4 lg:py-8">
       <Container className="max-w-5xl">
-        <nav className="border-border grid grid-cols-2 items-center rounded-full border p-2 px-4 lg:grid-cols-3">
+        <nav className="border-border grid grid-cols-2 items-center rounded-full border bg-black/20 p-2 px-4 py-3 backdrop-blur-md lg:grid-cols-3">
           <div>
             <Image
               src={logo}
