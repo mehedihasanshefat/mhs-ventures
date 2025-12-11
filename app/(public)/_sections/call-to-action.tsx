@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function CallToAction() {
   const [isHovered, setIsHovered] = useState(false);
-  const animation = useRef<AnimationPlaybackControls>();
+  const animation = useRef<AnimationPlaybackControls | null>(null);
   const [scope, animate] = useAnimate();
   const router = useRouter();
 
