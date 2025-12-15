@@ -4,18 +4,19 @@ import { prisma } from "@/lib/db";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 type StartupDetailsPageProps = {
-  params: {
-    id: string;
-  };
+  params: Promise<{
+    id?: string;
+  }>;
 };
 
 const PLACEHOLDER_IMAGE = "https://placehold.co/1200x600?text=Startup+Image";
 
 const StartupDetailsPage = async ({ params }: StartupDetailsPageProps) => {
-  const id = params.id;
+  const pms = await params;
+  const id = pms.id;
   if (!id) {
     notFound();
   }
@@ -37,7 +38,16 @@ const StartupDetailsPage = async ({ params }: StartupDetailsPageProps) => {
   }
 
   return (
-    <div className="mx-auto max-w-4xl space-y-8 px-4 py-10">
+    <div className="relative mx-auto max-w-4xl space-y-8 px-4 py-10">
+      <Link
+        href="/startups"
+        className={buttonVariants({
+          variant: "default",
+          className: "absolute top-4 left-4 z-20 self-start",
+        })}
+      >
+        Go baack
+      </Link>
       {/* IMAGE */}
       <div className="relative h-[320px] w-full overflow-hidden rounded-3xl">
         <Image

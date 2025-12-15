@@ -1,8 +1,9 @@
 import { prisma } from "@/lib/db";
 import StartupCard from "./_components/startup-card";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import Container from "@/components/container";
+import Link from "next/link";
 
 type StartupsPageProps = {
   searchParams?: Promise<{
@@ -39,7 +40,16 @@ const StartupsPage = async ({ searchParams }: StartupsPageProps) => {
   // className="mx-auto max-w-7xl space-y-8 px-4 py-10"
 
   return (
-    <Container className="flex flex-col items-center space-y-8 px-4 py-10">
+    <Container className="relative flex flex-col items-center space-y-8 px-4 py-10">
+      <Link
+        href="/"
+        className={buttonVariants({
+          variant: "default",
+          className: "absolute top-8 left-8 z-20 self-start",
+        })}
+      >
+        Go to home
+      </Link>
       <h1 className="text-center text-3xl font-bold">All Startups</h1>
 
       <form className="flex gap-2">

@@ -35,11 +35,16 @@ export default function Navbar() {
           </div>
           <div className="flex justify-end gap-4">
             {session ? (
-              <UserDropdown
-                name={session?.user?.name}
-                email={session?.user?.email}
-                image={session?.user?.image || undefined}
-              />
+              <>
+                <Link href="/startups/create" className={buttonVariants()}>
+                  Create
+                </Link>
+                <UserDropdown
+                  name={session?.user?.name}
+                  email={session?.user?.email}
+                  image={session?.user?.image || undefined}
+                />
+              </>
             ) : (
               <>
                 <Link

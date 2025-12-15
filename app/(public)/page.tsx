@@ -7,6 +7,7 @@ import Integrations from "./_sections/integrations";
 import Faqs from "./_sections/faqs";
 import CallToAction from "./_sections/call-to-action";
 import Container from "@/components/container";
+// import RecentPitches from "./_components/recent-pitches-carousel";
 function HomePage() {
   return (
     <>
@@ -23,6 +24,9 @@ function HomePage() {
       <Container>
         <Integrations />
       </Container>
+      {/* <Container>
+        <RecentPitches />
+      </Container> */}
       <Faqs />
       <Container>
         <CallToAction />
