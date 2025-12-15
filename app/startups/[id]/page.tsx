@@ -15,8 +15,12 @@ type StartupDetailsPageProps = {
 const PLACEHOLDER_IMAGE = "https://placehold.co/1200x600?text=Startup+Image";
 
 const StartupDetailsPage = async ({ params }: StartupDetailsPageProps) => {
+  const id = params.id;
+  if (!id) {
+    notFound();
+  }
   const startup = await prisma.startup.findUnique({
-    where: { id: params.id },
+    where: { id: id },
     include: {
       user: {
         select: {
