@@ -59,7 +59,7 @@ export default function Hero() {
 
   return (
     <section
-      className="mx-auto mt-20 max-w-[1600px] overflow-x-clip py-24"
+      className="mx-auto mt-2 max-w-[1600px] overflow-x-clip py-24"
       style={{
         cursor: `url(${cursorYouImage.src}), auto`,
       }}

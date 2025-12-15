@@ -38,7 +38,7 @@ export type Account = Prisma.AccountModel
  */
 export type Verification = Prisma.VerificationModel
 /**
- * Model Test
+ * Model Startup
  * 
  */
-export type Test = Prisma.TestModel
+export type Startup = Prisma.StartupModel

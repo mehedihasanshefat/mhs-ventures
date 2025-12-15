@@ -11,12 +11,22 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <LogoTicker />
-      <Introduction />
-      <Features />
-      <Integrations />
-      {/* <Faqs />
-      <CallToAction /> */}
+      <Container>
+        <LogoTicker />
+      </Container>
+      <Container>
+        <Introduction />
+      </Container>
+      <Container>
+        <Features />
+      </Container>
+      <Container>
+        <Integrations />
+      </Container>
+      <Faqs />
+      <Container>
+        <CallToAction />
+      </Container>
     </>
   );
 }

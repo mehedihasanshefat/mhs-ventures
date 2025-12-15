@@ -55,7 +55,7 @@ export const ModelName = {
   Session: 'Session',
   Account: 'Account',
   Verification: 'Verification',
-  Test: 'Test'
+  Startup: 'Startup'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -132,12 +132,18 @@ export const VerificationScalarFieldEnum = {
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
 
 
-export const TestScalarFieldEnum = {
+export const StartupScalarFieldEnum = {
   id: 'id',
-  text: 'text'
+  title: 'title',
+  description: 'description',
+  category: 'category',
+  link: 'link',
+  pitch: 'pitch',
+  userId: 'userId',
+  createdAt: 'createdAt'
 } as const
 
-export type TestScalarFieldEnum = (typeof TestScalarFieldEnum)[keyof typeof TestScalarFieldEnum]
+export type StartupScalarFieldEnum = (typeof StartupScalarFieldEnum)[keyof typeof StartupScalarFieldEnum]
 
 
 export const SortOrder = {

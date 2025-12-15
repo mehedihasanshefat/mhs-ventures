@@ -388,7 +388,7 @@ export const ModelName = {
   Session: 'Session',
   Account: 'Account',
   Verification: 'Verification',
-  Test: 'Test'
+  Startup: 'Startup'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -404,7 +404,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "test"
+    modelProps: "user" | "session" | "account" | "verification" | "startup"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -704,77 +704,77 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    Test: {
-      payload: Prisma.$TestPayload<ExtArgs>
-      fields: Prisma.TestFieldRefs
+    Startup: {
+      payload: Prisma.$StartupPayload<ExtArgs>
+      fields: Prisma.StartupFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.TestFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload> | null
+          args: Prisma.StartupFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.TestFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload>
+          args: Prisma.StartupFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload>
         }
         findFirst: {
-          args: Prisma.TestFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload> | null
+          args: Prisma.StartupFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.TestFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload>
+          args: Prisma.StartupFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload>
         }
         findMany: {
-          args: Prisma.TestFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload>[]
+          args: Prisma.StartupFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload>[]
         }
         create: {
-          args: Prisma.TestCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload>
+          args: Prisma.StartupCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload>
         }
         createMany: {
-          args: Prisma.TestCreateManyArgs<ExtArgs>
+          args: Prisma.StartupCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.TestCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload>[]
+          args: Prisma.StartupCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload>[]
         }
         delete: {
-          args: Prisma.TestDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload>
+          args: Prisma.StartupDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload>
         }
         update: {
-          args: Prisma.TestUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload>
+          args: Prisma.StartupUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload>
         }
         deleteMany: {
-          args: Prisma.TestDeleteManyArgs<ExtArgs>
+          args: Prisma.StartupDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.TestUpdateManyArgs<ExtArgs>
+          args: Prisma.StartupUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.TestUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload>[]
+          args: Prisma.StartupUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload>[]
         }
         upsert: {
-          args: Prisma.TestUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$TestPayload>
+          args: Prisma.StartupUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StartupPayload>
         }
         aggregate: {
-          args: Prisma.TestAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateTest>
+          args: Prisma.StartupAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStartup>
         }
         groupBy: {
-          args: Prisma.TestGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.TestGroupByOutputType>[]
+          args: Prisma.StartupGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StartupGroupByOutputType>[]
         }
         count: {
-          args: Prisma.TestCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.TestCountAggregateOutputType> | number
+          args: Prisma.StartupCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StartupCountAggregateOutputType> | number
         }
       }
     }
@@ -875,12 +875,18 @@ export const VerificationScalarFieldEnum = {
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
 
 
-export const TestScalarFieldEnum = {
+export const StartupScalarFieldEnum = {
   id: 'id',
-  text: 'text'
+  title: 'title',
+  description: 'description',
+  category: 'category',
+  link: 'link',
+  pitch: 'pitch',
+  userId: 'userId',
+  createdAt: 'createdAt'
 } as const
 
-export type TestScalarFieldEnum = (typeof TestScalarFieldEnum)[keyof typeof TestScalarFieldEnum]
+export type StartupScalarFieldEnum = (typeof StartupScalarFieldEnum)[keyof typeof StartupScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1044,7 +1050,7 @@ export type GlobalOmitConfig = {
   session?: Prisma.SessionOmit
   account?: Prisma.AccountOmit
   verification?: Prisma.VerificationOmit
-  test?: Prisma.TestOmit
+  startup?: Prisma.StartupOmit
 }
 
 /* Types for Logging */
